@@ -23,4 +23,10 @@ public interface UserService {
      */
     public User findUserById(String id);
 
+
+    /**
+     * 更新
+     * @param user
+     */
+    public void updateUser(User user);
 }

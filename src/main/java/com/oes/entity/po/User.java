@@ -27,6 +27,7 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:dd")
     private Date lastLoginTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:dd")
+    private String lastLoginIp;
     private Date createTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:dd")
     private Date updateTime;

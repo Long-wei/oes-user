@@ -2,6 +2,7 @@ package com.oes.mapper;
 
 import com.oes.entity.dto.LoginDto;
 import com.oes.entity.po.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author LongWei
@@ -27,6 +28,6 @@ public interface UserMapper {
      * 更新
      * @param user
      */
-    public void updateUser(User user);
+    public void updateUser(@Param("user") User user);
 
 }
