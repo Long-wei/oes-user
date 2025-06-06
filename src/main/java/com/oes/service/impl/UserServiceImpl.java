@@ -46,11 +46,11 @@ public class UserServiceImpl implements UserService {
         }
         // loginLog存储登录信息
         loginLogService.saveByUserIdAndUsername(loginDto.getId(), loginDto.getUsername());
-        // 跟新最后登录时间 // TODO 最后登录ip地址
+        // 跟新最后登录时间
         User user = new User();
         user.setId(loginDto.getId());
         user.setLastLoginTime(DateUtils.getCurrentDateTime());
-        user.setLastLoginIp(null);
+        user.setLastLoginIp(null);  // TODO 最后登录ip地址
         userMapper.updateUser(user);
         return loginDto;
     }

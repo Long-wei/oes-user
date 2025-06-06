@@ -21,7 +21,7 @@ public class UserVo {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date createTIme;
+    private Date createTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastLoginTime;
 }
