@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oes.mapper.UserTokenMapper">
+
+    <insert id="insertUserToken">
+        insert into user_token (id, user_id, token, token_type, expire_time)
+        VALUES(#{userToken.id}, #{userToken.userId}, #{userToken.token}, #{userToken.tokenType}, #{userToken.expireTime})
+    </insert>
+
+    <update id="updateUserToken" parameterType="com.oes.entity.po.UserToken">
+        update user_token
+        <set>
+            <if test="userToken.userId != null">user_id = #{userToken.userId}</if>
+            <if test="userToken.token != null">, token = #{userToken.token}</if>
+            <if test="userToken.tokenType != null">, expire_time = #{userToken.expireTime}</if>
+            <if test="userToken.createTime">, create_time = #{userToken.createTime}</if>
+            <if test="userToken.updateTime">, update_time = #{userToken.updateTime}</if>
+        </set>
+        where
+            id = #{userToken.id}
+    </update>
+
+</mapper>

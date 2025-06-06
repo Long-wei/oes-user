@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oes.mapper.LoginLogMapper">
+
+    <insert id="insert">
+        insert into login_log (id, user_id, username, ip, location, device, browser, os, status, msg)
+        VALUES(
+        #{loginLog.id}, #{loginLog.userId}, #{loginLog.username}, #{loginLog.ip}, #{loginLog.location}, #{loginLog.device}, #{loginLog.browser}, #{loginLog.os}, #{loginLog.status}, #{loginLog.msg}
+        )
+    </insert>
+
+</mapper>

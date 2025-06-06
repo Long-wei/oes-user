@@ -1,0 +1,21 @@
+CREATE TABLE `user` (
+                        `id` varchar(64) NOT NULL COMMENT '用户ID',
+                        `username` varchar(64) NOT NULL COMMENT '用户名',
+                        `password` varchar(256) NOT NULL COMMENT '加密后的密码',
+                        `salt` varchar(64) COMMENT '加密盐值',
+                        `email` varchar(128) COMMENT '邮箱',
+                        `phone` varchar(32) COMMENT '手机号',
+                        `real_name` varchar(64) COMMENT '真实姓名',
+                        `avatar` varchar(512) COMMENT '头像URL',
+                        `gender` tinyint DEFAULT 0 COMMENT '性别(0-未知 1-男 2-女)',
+                        `birthday` date COMMENT '生日',
+                        `status` tinyint DEFAULT 1 COMMENT '状态(0-禁用 1-正常)',
+                        `last_login_time` datetime COMMENT '最后登录时间',
+                        `last_login_ip` varchar(64) COMMENT '最后登录IP',
+                        `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                        `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                        PRIMARY KEY (`id`),
+                        UNIQUE KEY `idx_username` (`username`),
+                        UNIQUE KEY `idx_email` (`email`),
+                        UNIQUE KEY `idx_phone` (`phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户基础表';
