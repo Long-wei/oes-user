@@ -17,7 +17,8 @@ public class UserVo {
     private String phone;
     private String avatar;
     private String realName;
-    private String gender;
+    private Integer gender;
+    private Integer status;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
